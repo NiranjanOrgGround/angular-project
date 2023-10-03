@@ -27,10 +27,10 @@ jobs:
       working-directory: ./angular-tour-of-heroes/ 
     - run: npm run build
       working-directory: ./angular-tour-of-heroes/
-    - run: pwd
-    - run: ls angular-tour-of-heroes
-    # - name: Upload the artifacts
-    #   uses: actions/upload-artifact@v3.1.3
-    #   with:
-    #     name: artifacts
-    #     path: ./angular-tour-of-heroes/dist*
+    # - run: pwd
+    # - run: ls angular-tour-of-heroes
+    - name: Upload the artifacts
+      uses: actions/upload-artifact@v3.1.3
+      with:
+        name: artifacts
+        path: ./dist
