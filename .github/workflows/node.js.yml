@@ -28,7 +28,7 @@ jobs:
     - run: npm build
       working-directory: ./angular-tour-of-heroes/
     - run: pwd
-    - run: ls
+    - run: ls angular-tour-of-heroes
     # - name: Upload the artifacts
     #   uses: actions/upload-artifact@v3.1.3
     #   with:
