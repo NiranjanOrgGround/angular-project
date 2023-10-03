@@ -26,7 +26,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: pwd
+    - run: ls
+    - run: npm install -g @angular/cli 
     - run: npm install
-      working-directory: ./angular-tour-of-heroes 
+      working-directory: angular-project/angular-tour-of-heroes/ 
     - run: ng build
-      working-directory: ./angular-tour-of-heroes
+      working-directory: angular-project/angular-tour-of-heroes/
