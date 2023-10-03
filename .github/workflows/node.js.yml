@@ -14,21 +14,21 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js 14
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
-    - run: pwd
-    - run: ls
+        node-version: '14.x'
+    # - run: pwd
+    # - run: ls
     # - run: npm install -g @angular/cli 
     - run: npm install
       working-directory: ./angular-tour-of-heroes/ 
     - run: npm build
       working-directory: ./angular-tour-of-heroes/
+    - name: Upload the artifacts
+      uses: actions/upload-artifact@v3.1.3
+      with:
+        name: artifacts
+        path: ./angular-tour-of-heroes/dist/*
